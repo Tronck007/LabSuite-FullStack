@@ -1,0 +1,294 @@
+{
+  "folders": [
+    {
+      "name": "🏠 LabSuite Root",
+      "path": "."
+    },
+    {
+      "name": "🔧 Backend (API)",
+      "path": "./apirest-rowesuite-v5"
+    },
+    {
+      "name": "🎨 Frontend (Vue)",
+      "path": "./LABSUITE-FRONTEND-V5"
+    }
+  ],
+  "settings": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": true,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "files.associations": {
+      "*.vue": "vue",
+      "*.env*": "properties"
+    },
+    "emmet.includeLanguages": {
+      "vue-html": "html"
+    },
+    "eslint.workingDirectories": [
+      "./apirest-rowesuite-v5",
+      "./LABSUITE-FRONTEND-V5"
+    ],
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/dist": true,
+      "**/build": true,
+      "**/*.log": true
+    },
+    "files.exclude": {
+      "**/node_modules": true,
+      "**/dist": true,
+      "**/build": true,
+      "**/.git": true,
+      "**/.DS_Store": true,
+      "**/Thumbs.db": true
+    },
+    "typescript.preferences.importModuleSpecifier": "relative",
+    "vetur.format.defaultFormatter.html": "prettier",
+    "vetur.format.defaultFormatter.js": "prettier-eslint",
+    "vetur.format.defaultFormatter.ts": "prettier-eslint",
+    "git.ignoreLimitWarning": true,
+    "terminal.integrated.cwd": ".",
+    "debug.internalConsoleOptions": "openOnSessionStart"
+  },
+  "extensions": {
+    "recommendations": [
+      "vscode-icons-team.vscode-icons",
+      "ms-vscode.vscode-typescript-next",
+      "vue.volar",
+      "vue.vscode-typescript-vue-plugin",
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "bradlc.vscode-tailwindcss",
+      "ms-vscode.vscode-json",
+      "formulahendry.auto-rename-tag",
+      "christian-kohler.path-intellisense",
+      "ms-vscode.vscode-typescript-next",
+      "ms-vscode-remote.remote-containers",
+      "ms-vscode.vscode-docker",
+      "mongodb.mongodb-vscode",
+      "humao.rest-client",
+      "gruntfuggly.todo-tree",
+      "wayou.vscode-todo-highlight",
+      "aaron-bond.better-comments",
+      "ms-vscode.vscode-typescript-next"
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "🚀 Iniciar Desarrollo Completo (PM2)",
+        "type": "shell",
+        "command": "npm run dev",
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "🔧 Solo Backend",
+        "type": "shell",
+        "command": "npm run backend:dev",
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "🎨 Solo Frontend",
+        "type": "shell",
+        "command": "npm run frontend:dev",
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "📦 Instalar Dependencias",
+        "type": "shell",
+        "command": "npm run install:all",
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "📊 Ver Logs",
+        "type": "shell",
+        "command": "npm run logs",
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "🧪 Ejecutar Tests",
+        "type": "shell",
+        "command": "npm run test",
+        "group": "test",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "🔍 Linter",
+        "type": "shell",
+        "command": "npm run lint",
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "🏗️ Build Producción",
+        "type": "shell",
+        "command": "npm run backend:build && npm run frontend:build",
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "🛑 Parar Servicios",
+        "type": "shell",
+        "command": "npm run stop",
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "🧹 Limpiar y Reiniciar",
+        "type": "shell",
+        "command": "npm run reset",
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "📊 PM2 Status",
+        "type": "shell",
+        "command": "npm run status",
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "📈 PM2 Monitor",
+        "type": "shell",
+        "command": "npm run monit",
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "🔄 PM2 Restart",
+        "type": "shell",
+        "command": "npm run restart",
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "💀 PM2 Kill All",
+        "type": "shell",
+        "command": "npm run kill",
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        },
+        "problemMatcher": []
+      }
+    ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "🔧 Debug Backend",
+        "type": "node",
+        "request": "launch",
+        "program": "${workspaceFolder}/apirest-rowesuite-v5/src/main.js",
+        "cwd": "${workspaceFolder}/apirest-rowesuite-v5",
+        "env": {
+          "NODE_ENV": "development"
+        },
+        "console": "integratedTerminal",
+        "internalConsoleOptions": "neverOpen"
+      },
+      {
+        "name": "🎨 Debug Frontend",
+        "type": "node",
+        "request": "launch",
+        "program": "${workspaceFolder}/LABSUITE-FRONTEND-V5/node_modules/.bin/vite",
+        "args": ["--mode", "development"],
+        "cwd": "${workspaceFolder}/LABSUITE-FRONTEND-V5",
+        "console": "integratedTerminal",
+        "internalConsoleOptions": "neverOpen"
+      }
+    ]
+  }
+} 

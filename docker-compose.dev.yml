@@ -1,0 +1,70 @@
+version: '3.8'
+
+services:
+  # Backend - API REST
+  backend:
+    build: 
+      context: ./apirest-rowesuite-v5
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./apirest-rowesuite-v5:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - MONGODB_URI=mongodb://mongo:27017/rowesuite_dev
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - mongo
+      - redis
+    networks:
+      - labsuite-network
+
+  # Frontend - Vue.js
+  frontend:
+    build:
+      context: ./LABSUITE-FRONTEND-V5
+      dockerfile: dev.Dockerfile
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./LABSUITE-FRONTEND-V5:/app
+      - /app/node_modules
+    environment:
+      - VITE_API_URL=http://localhost:3000/api/v1
+    depends_on:
+      - backend
+    networks:
+      - labsuite-network
+
+  # Base de datos
+  mongo:
+    image: mongo:7.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    networks:
+      - labsuite-network
+
+  # Cache Redis
+  redis:
+    image: redis:7.0-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - labsuite-network
+
+volumes:
+  mongo_data:
+  redis_data:
+
+networks:
+  labsuite-network:
+    driver: bridge 
